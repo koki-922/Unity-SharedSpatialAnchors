@@ -148,6 +148,11 @@ static class SampleExtensions
                     return "\n(device lacks internet connection)";
                 else
                     return "\n(device has internet)";
+
+            case OVRPlugin.Result.Failure_OperationFailed: // infamous -1006
+                return "\nNOTE:  OVRPlugin doesn't know what exactly went wrong, but logcat might show additional "
+                       + "information about the failure.  You may also be able to remedy the issue by clearing your "
+                       + "local save data (trash button on the left-hand UI panel) and trying again.";
         }
 
         return string.Empty;

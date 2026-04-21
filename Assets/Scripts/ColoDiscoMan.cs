@@ -1044,30 +1044,30 @@ public class ColoDiscoMan : MonoBehaviour
         // start with all known anchors
         var toShare = new List<ColoDiscoAnchor>(anchors);
 
-        int i = toShare.Count;
+        int total = toShare.Count;
+        int i = total;
         while (i-- > 0)
         {
             var anchor = toShare[i];
-            // remove anything deleted ("hidden") or disabled
-            if (!anchor || !anchor.isActiveAndEnabled)
+
+            // remove deleted ("hidden") anchors (just a sanity measure)
+            if (!anchor)
             {
                 toShare.RemoveAt(i);
-                // note: We could technically still try sharing these destroyed anchors (we have the original UUID in
-                //       m_KnownAnchors.Keys), but we are choosing to assume that if the anchor was Destroy()'ed, the
-                //       app user probably does not intend to propagate it to others in the room (at least, not without
-                //       explicitly reloading it first).
+                continue;
             }
 
+            // only keep anchors created by the local user
             if (anchor.Source.IsMine)
                 continue;
 
+            toShare.RemoveAt(i);
+
             Sampleton.Log(
-                $"- WARNING: You are not the original creator of {anchor.Uuid.Brief()}." +
-                "  (The following share operation is likely to fail.)",
+                $"- Anchor {anchor.Uuid.Brief()} doesn't appear to be yours!" +
+                $"  Removed it from the share list.",
                 LogType.Warning
             );
-            // pst: your code could try loading these anchors individually as a fallback,
-            // so any that DO belong to the local user actually get shared.
         }
 
         if (toShare.Count == 0 && !ForceShareAnchors)
@@ -1076,7 +1076,7 @@ public class ColoDiscoMan : MonoBehaviour
             return;
         }
 
-        Sampleton.Log($"+ {toShare.Count} shareable anchors.");
+        Sampleton.Log($"+ {toShare.Count}/{total} shareable anchors.");
 
         OVRResult<OVRAnchor.ShareResult> shareResult;
         if (groupIds.Length == 1)

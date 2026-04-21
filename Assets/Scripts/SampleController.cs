@@ -152,6 +152,14 @@ public class SampleController : MonoBehaviour
     }
 
 
+    public static void ClearLocalSaves()
+    {
+        LocallySaved.DeleteActive(wipeDisk: true, out string saveName);
+
+        Log($"{nameof(ClearLocalSaves)}: {saveName} serialized anchors cleared.", LogType.Warning);
+    }
+
+
     static readonly System.Text.StringBuilder s_LogBuilder = new();
 
     void LogInScene(string message, LogType type)

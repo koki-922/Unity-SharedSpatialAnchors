@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 27844216}
   - component: {fileID: 27844215}
   - component: {fileID: 27844214}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 503860779}
   - component: {fileID: 503860778}
   - component: {fileID: 503860777}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 772041851}
   - component: {fileID: 772041850}
   - component: {fileID: 772041849}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 777869822}
   - component: {fileID: 777869820}
   - component: {fileID: 777869819}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Button: Share'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 822113133}
   - component: {fileID: 822113132}
   - component: {fileID: 822113131}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   - component: {fileID: 884223558}
   - component: {fileID: 884223556}
   - component: {fileID: 884223555}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Button: Erase'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 974270403}
   - component: {fileID: 974270401}
   - component: {fileID: 974270400}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Button: Save'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 1061034395}
   - component: {fileID: 1061034394}
   - component: {fileID: 1061034393}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 1081522963}
   - component: {fileID: 1081522962}
   - component: {fileID: 1081522961}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 1227622014}
   - component: {fileID: 1227622013}
   - component: {fileID: 1227622012}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 1272804706}
   - component: {fileID: 1272804704}
   - component: {fileID: 1272804703}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Button: Align'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 1299950869}
   - component: {fileID: 1299950868}
   - component: {fileID: 1299950867}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 1311285391}
   - component: {fileID: 1311285393}
   - component: {fileID: 1311285392}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Text: AnchorName'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 1395050982}
   - component: {fileID: 1395050981}
   - component: {fileID: 1395050980}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   - component: {fileID: 1517086736}
   - component: {fileID: 1517086735}
   - component: {fileID: 1517086734}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1805,7 @@ GameObject:
   - component: {fileID: 1538480870}
   - component: {fileID: 1538480869}
   - component: {fileID: 354392759}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,6 +1933,8 @@ MonoBehaviour:
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
   _canvas: {fileID: 1538480874}
+  _coneCastingEnabled: 0
+  _debugDrawCone: 0
 --- !u!114 &1538480869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1972,7 +1974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1614619376}
   - component: {fileID: 1614619377}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Clipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2021,7 @@ GameObject:
   - component: {fileID: 1638024063}
   - component: {fileID: 1638024065}
   - component: {fileID: 1638024064}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Header: Anchor Menu'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,7 +2095,7 @@ GameObject:
   - component: {fileID: 1666534125}
   - component: {fileID: 1666534124}
   - component: {fileID: 1666534123}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2189,7 +2191,7 @@ GameObject:
   - component: {fileID: 1728068395}
   - component: {fileID: 1728068394}
   - component: {fileID: 1728068393}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2344,7 +2346,7 @@ GameObject:
   - component: {fileID: 1739465343}
   - component: {fileID: 1739465342}
   - component: {fileID: 1739465341}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2447,7 +2449,7 @@ GameObject:
   - component: {fileID: 1749490403}
   - component: {fileID: 1749490405}
   - component: {fileID: 1749490404}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Text: OVRSpatialAnchor'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2584,7 +2586,7 @@ GameObject:
   - component: {fileID: 1803722508}
   - component: {fileID: 1803722507}
   - component: {fileID: 1803722506}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2688,7 +2690,7 @@ GameObject:
   - component: {fileID: 1826012000}
   - component: {fileID: 1826011999}
   - component: {fileID: 1826011998}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2843,7 +2845,7 @@ GameObject:
   - component: {fileID: 1831342563}
   - component: {fileID: 1831342561}
   - component: {fileID: 1831342560}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: 'Button: Hide'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2966,7 +2968,7 @@ GameObject:
   - component: {fileID: 1864924170}
   - component: {fileID: 1864924169}
   - component: {fileID: 1864924168}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Anchor Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3073,7 +3075,7 @@ GameObject:
   - component: {fileID: 2704684844738723138}
   - component: {fileID: 1995566390019704314}
   - component: {fileID: 6781377458318886933}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3156,7 +3158,7 @@ GameObject:
   - component: {fileID: 2715003278546156411}
   - component: {fileID: 3760368455330669179}
   - component: {fileID: 3070204626180548219}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,7 +3241,7 @@ GameObject:
   - component: {fileID: 7429461506843892805}
   - component: {fileID: 2899251731682138844}
   - component: {fileID: 5832612762285196102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpatialAnchorPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3302,7 +3304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4641425935088398246}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3339,7 +3341,7 @@ GameObject:
   - component: {fileID: 2428956382053059218}
   - component: {fileID: 4323485701711580393}
   - component: {fileID: 9056825362113505591}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,7 +3424,7 @@ GameObject:
   - component: {fileID: 7588800854098280694}
   - component: {fileID: 7174627750671317811}
   - component: {fileID: 1328482533886502038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

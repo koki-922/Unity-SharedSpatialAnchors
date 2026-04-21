@@ -134,6 +134,13 @@ static class LocallySaved
     }
 
 
+    public static void DeleteActive(bool wipeDisk, out string saveName)
+    {
+        var dataStore = GetActiveDataStore();
+        saveName = dataStore.SceneName;
+        dataStore.Clear(wipeDisk);
+    }
+
     public static void DeleteAll(bool wipeDisk)
     {
         PerSceneData.GlobalData.Clear(wipeDisk);
