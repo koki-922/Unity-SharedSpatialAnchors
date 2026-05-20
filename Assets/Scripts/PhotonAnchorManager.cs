@@ -60,8 +60,14 @@ public class PhotonAnchorManager : MonoBehaviourPunCallbacks
 
             var userIds = new List<ulong>(capacity: room.PlayerCount);
 
+            // Skip the local player: sharing an anchor with its own owner causes the OVR backend to
+            // reject the request (-1006 Failure_OperationFailed), and surfaces as
+            // "Can't share, there is no guest to share with" in the sample UI.
+            var localPlayer = PhotonNetwork.LocalPlayer;
             foreach (var player in room.Players.Values)
             {
+                if (localPlayer != null && player.ActorNumber == localPlayer.ActorNumber)
+                    continue;
                 if (player.TryGetPlatformID(out ulong uid))
                     userIds.Add(uid);
             }
@@ -454,7 +460,9 @@ public class PhotonAnchorManager : MonoBehaviourPunCallbacks
         {
             Sampleton.Log("  * (auto-sharing your pre-shared anchors to them...)");
 
-            SharedAnchor.ShareAllMineTo(ocid, reshareOnly: true);
+            // reshareOnly:false so anchors created while the host was alone (which therefore could never
+            // have been "successfully shared" yet) are still shared to the newly-joined guest.
+            SharedAnchor.ShareAllMineTo(ocid, reshareOnly: false);
         }
         else
         {

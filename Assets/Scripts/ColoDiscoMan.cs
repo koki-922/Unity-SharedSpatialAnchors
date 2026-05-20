@@ -1236,7 +1236,7 @@ public class ColoDiscoMan : MonoBehaviour
 
         var groupAnchors = groupId.HasValue ? m_KnownGroups[groupId.Value].SharedAnchors : null;
 
-        for (i = 0; i < batchResultBuffer.Count; --i)
+        for (i = 0; i < batchResultBuffer.Count; ++i)
         {
             if (!batchResultBuffer[i]) // already should be error logged, and discoAnchor would have self-destructed.
                 continue;
