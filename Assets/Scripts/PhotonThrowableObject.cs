@@ -42,12 +42,12 @@ public class PhotonThrowableObject : PhotonGrabbableObject
 
         if (vRightVelocity.sqrMagnitude > vLeftVelocity.sqrMagnitude)
         {
-            m_Physics.velocity = vRightVelocity;
+            m_Physics.linearVelocity = vRightVelocity;
             m_Physics.angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.RTouch);
         }
         else
         {
-            m_Physics.velocity = vLeftVelocity;
+            m_Physics.linearVelocity = vLeftVelocity;
             m_Physics.angularVelocity = OVRInput.GetLocalControllerAngularVelocity(OVRInput.Controller.LTouch);
         }
     }

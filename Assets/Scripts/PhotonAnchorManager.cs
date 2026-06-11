@@ -313,13 +313,14 @@ public class PhotonAnchorManager : MonoBehaviourPunCallbacks
                 _ => $"UNKNOWN_ERROR({err.Code})"
             };
             Sampleton.LogError($"{nameof(GetLoggedInUserCallback)}: FAILED: {codeStr}");
+#if UNITY_EDITOR || UNITY_STANDALONE
+            if (err.Code == 1)
+            {
+                Sampleton.Log("- Did you remember to enter your test user credentials into the OculusPlatformSettings asset?");
+            }
+#endif
             return;
         }
-
-        Sampleton.Log($"{nameof(GetLoggedInUserCallback)}: received {msg.Type}");
-
-        if (msg.Type != Message.MessageType.User_GetLoggedInUser)
-            return;
 
         var ocid = msg.GetUser().ID;
         var username = msg.GetUser().OculusID;

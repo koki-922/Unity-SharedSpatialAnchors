@@ -544,11 +544,18 @@ public class SharedAnchor : MonoBehaviour
         ShareSucceeded = shareResult.IsSuccess();
         if (ShareSucceeded)
         {
-            IsSaved = true; // shared anchors are implicitly cloud-saved
             Sampleton.Log($"  + Share Result: {loggedResult}");
+
+            // shared anchors are implicitly persisted, as if SaveAnchorAsync has been called:
+            IsSaved = true;
+            Sampleton.Log(SampleColors.RichText.Gray +
+                          "  + Note: Sharing an anchor also persists it, similar to SaveAnchorAsync" +
+                          SampleColors.RichText.End);
+
             // In this context of the sample, we need to transmit this now-shared anchor's id by some other means to our
             // peers. The "means" that we presently choose to demo with is Photon Realtime + PUN.
             PhotonAnchorManager.PublishAnchorToUsers(Uuid, userIds);
+
             return;
         }
 

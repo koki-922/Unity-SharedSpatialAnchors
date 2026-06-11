@@ -82,7 +82,7 @@ public class SampleController : MonoBehaviour
         if (_rayInteractor)
             return;
 
-        _rayInteractor = FindObjectOfType<RayInteractor>();
+        _rayInteractor = FindFirstObjectByType<RayInteractor>();
     }
 
 
@@ -115,7 +115,7 @@ public class SampleController : MonoBehaviour
         placementPreview.SetActive(false);
 
         if (!_rayInteractor)
-            _rayInteractor = FindObjectOfType<RayInteractor>();
+            _rayInteractor = FindFirstObjectByType<RayInteractor>();
 
         if (!logText)
             return;

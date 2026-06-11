@@ -108,7 +108,7 @@ static class SampleExtensions
             s_StrBuf.Append(SampleColors.RichText.Noice);
 
         s_StrBuf.Append($"{(OVRPlugin.Result)(object)status}({raw})");
-        s_StrBuf.Append("</color>");
+        s_StrBuf.Append(SampleColors.RichText.End);
 
         if (details)
             s_StrBuf.Append(StatusExtraDetails(status));

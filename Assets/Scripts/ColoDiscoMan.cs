@@ -826,8 +826,6 @@ public class ColoDiscoMan : MonoBehaviour
 
         Sampleton.Log($"{nameof(ReceivedLoggedInUser)} success:");
 
-        Assert.AreEqual(Message.MessageType.User_GetLoggedInUser, msg.Type, "msg.Type");
-
         m_My = msg.GetUser();
 
         Assert.IsNotNull(m_My, "msg.GetUser()");

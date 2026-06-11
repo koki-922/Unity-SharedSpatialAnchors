@@ -58,6 +58,8 @@ static class SampleColors
     [MetaCodeSample("SharedSpatialAnchors")]
     public static class RichText
     {
+        public const string End = "</color>";
+
         // ReSharper disable MemberHidesStaticFromOuterClass
 
         public static readonly string Gray = Convert(SampleColors.Gray);

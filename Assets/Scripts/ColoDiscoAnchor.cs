@@ -194,9 +194,9 @@ public class ColoDiscoAnchor : OVRSpatialAnchor
         if (LocallySaved.AnchorIsRemembered(Uuid))
         {
             if (LocallySaved.ForgetAnchor(Uuid))
-                Sampleton.Log($"+ Forget Anchor: {SampleColors.RichText.Noice}Success</color>");
+                Sampleton.Log($"+ Forget Anchor: {SampleColors.RichText.Noice}Success{SampleColors.RichText.End}");
             else
-                Sampleton.LogError($"- Forget Anchor: {SampleColors.RichText.Alert}Failure</color>");
+                Sampleton.LogError($"- Forget Anchor: {SampleColors.RichText.Alert}Failure{SampleColors.RichText.End}");
         }
         else
         {
