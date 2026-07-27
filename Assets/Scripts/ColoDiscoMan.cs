@@ -495,7 +495,7 @@ public class ColoDiscoMan : MonoBehaviour
 
         foreach (var uiThing in m_DisabledWithoutValidUser)
         {
-            uiThing.interactable = !m_RequireLoggedInUser || m_My != null;
+            uiThing.interactable = false;
         }
 
         if (m_GroupListItem && m_GroupListItem.activeSelf)
@@ -820,6 +820,10 @@ public class ColoDiscoMan : MonoBehaviour
             if (!m_RequireLoggedInUser)
             {
                 Sampleton.Log("* No worries! This build does not have a hard requirement for user login.\n<color=\"yellow\">* However, expect some elements of the sample to be less consistent without this info!</color>");
+                foreach (var uiThing in m_DisabledWithoutValidUser)
+                {
+                    uiThing.interactable = true;
+                }
             }
             return;
         }
