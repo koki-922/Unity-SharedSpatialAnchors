@@ -4,6 +4,8 @@ using Meta.XR.Samples;
 
 using Oculus.Interaction;
 
+using System.Collections;
+
 using TMPro;
 
 using UnityEngine;
@@ -82,7 +84,7 @@ public class SampleController : MonoBehaviour
         if (_rayInteractor)
             return;
 
-        _rayInteractor = FindFirstObjectByType<RayInteractor>();
+        _rayInteractor = FindObjectOfType<RayInteractor>();
     }
 
 
@@ -115,12 +117,13 @@ public class SampleController : MonoBehaviour
         placementPreview.SetActive(false);
 
         if (!_rayInteractor)
-            _rayInteractor = FindFirstObjectByType<RayInteractor>();
+            _rayInteractor = FindObjectOfType<RayInteractor>();
+    }
 
-        if (!logText)
-            return;
-
-        UpdateLogText();
+    IEnumerator Start()
+    {
+        yield return null;
+        UpdateLogText(forceLastPage: true);
     }
 
     void Update()
@@ -181,21 +184,23 @@ public class SampleController : MonoBehaviour
         UpdateLogText();
     }
 
-    void UpdateLogText()
+    void UpdateLogText(bool forceLastPage = false)
     {
         if (!logText)
             return;
 
-        bool trackLastPage = logText.pageToDisplay == logText.textInfo?.pageCount;
+        bool trackLastPage = forceLastPage || logText.pageToDisplay == (logText.textInfo?.pageCount ?? 1);
 
         logText.SetText(s_LogBuilder);
 
         if (!trackLastPage)
             return;
 
-        logText.ForceMeshUpdate(); // so that pageCount is correctly updated
+        logText.ForceMeshUpdate(ignoreActiveState: true); // so that pageCount is correctly updated
 
-        int p = logText.textInfo.pageCount;
+        int p = logText.textInfo?.pageCount ?? 1;
+        if (p < 1)
+            p = 1;
         logText.pageToDisplay = p;
         if (pageText)
             pageText.text = $"{p}/{p}";

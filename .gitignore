@@ -83,3 +83,8 @@ Builds
 
 # From com.unity.performance.profile-analyzer
 ProfileAnalyzer/
+
+#
+# Added by Meta's ImmersiveDebugger, can contain machine-specific data:
+Assets/Resources/DevAgentSettings.asset
+Assets/Resources/DevAgentSettings.asset.meta

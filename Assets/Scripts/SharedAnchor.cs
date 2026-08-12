@@ -211,16 +211,17 @@ public class SharedAnchor : MonoBehaviour
             return;
         }
 
+        Sampleton.Log($"{nameof(OnSaveLocalButtonPressed)}: {Uuid.Brief()}");
+
         if (IsSaved)
         {
             IsSaved = false;
             // only "un"saves the UUID serialized by the app logic~
             // (distinct from the "Erase" API call)
             LocallySaved.CommitToDisk();
+            Sampleton.Log($"- {SampleColors.RichText.Warn}Anchor Unsaved!{SampleColors.RichText.End}");
             return;
         }
-
-        Sampleton.Log($"{nameof(OnSaveLocalButtonPressed)}: {Uuid}");
 
         // API call: instance OVRSpatialAnchor.SaveAnchorAsync()
         var saveResult = await SpatialAnchor.SaveAnchorAsync();
@@ -244,7 +245,7 @@ public class SharedAnchor : MonoBehaviour
     public void OnHideButtonPressed()
     {
         var uuid = Uuid;
-        Sampleton.Log($"{nameof(OnHideButtonPressed)}: {uuid}");
+        Sampleton.Log($"{nameof(OnHideButtonPressed)}: {uuid.Brief()}");
 
         Destroy(gameObject);
 
@@ -306,7 +307,7 @@ public class SharedAnchor : MonoBehaviour
             return;
         }
 
-        Sampleton.Log("OnAlignButtonPressed");
+        Sampleton.Log($"{nameof(OnAlignButtonPressed)}: {Uuid.Brief()}");
 
         var offset = new Pose(transform.position, transform.rotation);
 
@@ -318,7 +319,7 @@ public class SharedAnchor : MonoBehaviour
 
     public void ShareWithRoom()
     {
-        Sampleton.Log($"{nameof(ShareWithRoom)}:");
+        Sampleton.Log($"{nameof(ShareWithRoom)}: {Uuid.Brief()}");
 
         // userIds is an array of scoped Oculus User IDs of peers in this Photon Room:
         if (!IsReadyToShare(out var userIds, printReason: true))

@@ -200,12 +200,16 @@ public class ColoDiscoAnchor : OVRSpatialAnchor
         }
         else
         {
-            string loggedResult = null;
+            string loggedResult;
             if (!IsSaved)
             {
                 var saveResult = await SaveAnchorAsync();
                 IsSaved = saveResult.Success;
                 loggedResult = saveResult.Status.ForLogging();
+            }
+            else
+            {
+                loggedResult = $"{SampleColors.RichText.Gray}LocallySaved state only{SampleColors.RichText.End}";
             }
 
             IsSaved = IsSaved && LocallySaved.RememberAnchor(Uuid, Source.IsMine);

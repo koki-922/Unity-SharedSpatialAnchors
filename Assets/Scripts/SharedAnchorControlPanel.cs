@@ -81,6 +81,7 @@ public class SharedAnchorControlPanel : MonoBehaviour
         if (PhotonNetwork.InRoom)
         {
             PhotonNetwork.LeaveRoom(becomeInactive: false);
+            Sampleton.Instance.EndPlacementMode();
         }
         else
         {
